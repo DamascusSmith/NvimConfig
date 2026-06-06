@@ -50,3 +50,6 @@ vim.keymap.set('n', '<Leader>ds', function() local widgets = require('dap.ui.wid
 vim.keymap.set('n', '<Leader>do', dapui.open, { desc = 'DapUI open'} )
 vim.keymap.set('n', '<Leader>dc', dapui.close, { desc = 'DapUI close'} )
 vim.keymap.set('n', '<Leader>dt', dapui.toggle, { desc = 'DapUI toggle'} )
+
+--nvim-tree
+vim.keymap.set('n', '<Leader>e', ":NvimTreeToggle<CR>", { desc = "Nvim-Tree Explorer" })

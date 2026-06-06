@@ -98,43 +98,14 @@ return require('packer').startup(function(use)
    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}}
    use { "thehamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" }}
 
-  -- Avante, bassically cursor --
-   
-  -- Required plugins
-  -- use 'MunifTanjim/nui.nvim'
-  -- use 'MeanderingProgrammer/render-markdown.nvim'
-
-  -- Optional dependencies
-  -- use 'nvim-tree/nvim-web-devicons' -- or use 'echasnovski/mini.icons'
-  -- use 'HakonHarnes/img-clip.nvim'
-  -- use 'zbirenbaum/copilot.lua'
-  -- use 'stevearc/dressing.nvim' -- for enhanced input UI
-  -- use 'folke/snacks.nvim' -- for modern input UI
-  -- Avante.nvim with build process
-  -- use {
-    -- 'yetone/avante.nvim',
-    -- branch = 'main',
-    -- run = 'make',
-    -- requires = {
-      -- "nvim-lua/plenary.nvim",
-      -- "MunifTanjim/nui.nvim",
-      -- "MeanderingProgrammer/render-markdown.nvim",
-      -- "nvim-tree/nvim-web-devicons",
-    -- },
-    -- config = function()
-      -- require('avante').setup({
-        -- provider = "gemini",
-        -- providers = {
-          -- gemini = {
-            -- model = "gemini-2.5-flash",
-            -- api_key_name = "GOOGLE_API_KEY",
-            -- extra_request_body = {
-              -- temperature = 0,
-            -- },
-          -- },
-        -- },
-      -- })
-      -- print("Avante loaded with provider: gemini")
-    -- end,
-  -- }
+   --Nvim-tree
+   use {
+     "nvim-tree/nvim-tree.lua",
+     requires = {
+       "nvim-tree/nvim-web-devicons",
+     },
+     config = function ()
+       require("nvim-tree").setup()
+     end
+   }
 end)
