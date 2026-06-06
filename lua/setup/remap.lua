@@ -40,23 +40,13 @@ vim.keymap.set('n', '<Leader>dr', function() require('dap').repl.open() end,
 { desc = "DAP REPL open" })
 
 vim.keymap.set('n', '<Leader>dl', function() require('dap').run_last() end)
-vim.keymap.set({'n', 'v'}, '<Leader>dh', function()
-  require('dap.ui.widgets').hover()
-end)
-vim.keymap.set({'n', 'v'}, '<Leader>dp', function()
-  require('dap.ui.widgets').preview()
-end)
-vim.keymap.set('n', '<Leader>df', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.frames
-end)
-vim.keymap.set('n', '<Leader>ds', function()
-  local widgets = require('dap.ui.widgets')
-  widgets.centered_float(widgets.scopes)
-end)
+vim.keymap.set({'n', 'v'}, '<Leader>dh', function() require('dap.ui.widgets').hover() end)
+vim.keymap.set({'n', 'v'}, '<Leader>dp', function() require('dap.ui.widgets').preview() end)
+vim.keymap.set('n', '<Leader>df', function() local widgets = require('dap.ui.widgets') widgets.centered_float(widgets.frames) end)
+vim.keymap.set('n', '<Leader>ds', function() local widgets = require('dap.ui.widgets') widgets.centered_float(widgets.scopes) end)
 
 --DapUI--
 --close
-vim.keymap.set('n', '<Leader>do', function() require("dapui").open() end, { desc = 'DapUI open'} )
-vim.keymap.set('n', '<Leader>dc', function() require("dapui").close() end, { desc = 'DapUI close'} )
-vim.keymap.set('n', '<Leader>dt', function() require("dapui").toggle() end, { desc = 'DapUI toggle'} )
+vim.keymap.set('n', '<Leader>do', dapui.open, { desc = 'DapUI open'} )
+vim.keymap.set('n', '<Leader>dc', dapui.close, { desc = 'DapUI close'} )
+vim.keymap.set('n', '<Leader>dt', dapui.toggle, { desc = 'DapUI toggle'} )
