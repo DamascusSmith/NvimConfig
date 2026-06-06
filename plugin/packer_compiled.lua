@@ -135,7 +135,7 @@ _G.packer_plugins = {
     url = "https://github.com/nvim-neotest/nvim-nio"
   },
   ["nvim-tree.lua"] = {
-    config = { "\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0" },
+    config = { "\27LJ\2\nc\0\1\4\1\4\0\b5\1\1\0'\2\0\0\18\3\0\0&\2\3\2=\2\2\1-\2\0\0=\2\3\1L\1\2\0\0À\vbuffer\tdesc\1\0\4\tdesc\0\vbuffer\0\fnoremap\2\vsilent\2\16nvim-tree: {\1\1\n\1\n\0\0163\1\0\0006\2\1\0009\2\2\0029\2\3\2'\4\4\0'\5\5\0-\6\0\0009\6\6\0069\6\a\0069\6\b\6\18\a\1\0'\t\t\0B\a\2\0A\2\3\0012\0\0€K\0\1\0\0À\tOpen\tedit\topen\tnode\16<LeftMouse>\6n\bset\vkeymap\bvim\0z\1\0\5\0\a\0\r6\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\1\3\0015\3\5\0003\4\4\0=\4\6\3B\1\2\0012\0\0€K\0\1\0\14on_attach\1\0\1\14on_attach\0\0\nsetup\14nvim-tree\18nvim-tree.api\frequire\0" },
     loaded = true,
     path = "/home/wikkenden/.local/share/nvim/site/pack/packer/start/nvim-tree.lua",
     url = "https://github.com/nvim-tree/nvim-tree.lua"
@@ -190,7 +190,7 @@ _G.packer_plugins = {
 time([[Defining packer_plugins]], false)
 -- Config for: nvim-tree.lua
 time([[Config for nvim-tree.lua]], true)
-try_loadstring("\27LJ\2\n7\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\14nvim-tree\frequire\0", "config", "nvim-tree.lua")
+try_loadstring("\27LJ\2\nc\0\1\4\1\4\0\b5\1\1\0'\2\0\0\18\3\0\0&\2\3\2=\2\2\1-\2\0\0=\2\3\1L\1\2\0\0À\vbuffer\tdesc\1\0\4\tdesc\0\vbuffer\0\fnoremap\2\vsilent\2\16nvim-tree: {\1\1\n\1\n\0\0163\1\0\0006\2\1\0009\2\2\0029\2\3\2'\4\4\0'\5\5\0-\6\0\0009\6\6\0069\6\a\0069\6\b\6\18\a\1\0'\t\t\0B\a\2\0A\2\3\0012\0\0€K\0\1\0\0À\tOpen\tedit\topen\tnode\16<LeftMouse>\6n\bset\vkeymap\bvim\0z\1\0\5\0\a\0\r6\0\0\0'\2\1\0B\0\2\0026\1\0\0'\3\2\0B\1\2\0029\1\3\0015\3\5\0003\4\4\0=\4\6\3B\1\2\0012\0\0€K\0\1\0\14on_attach\1\0\1\14on_attach\0\0\nsetup\14nvim-tree\18nvim-tree.api\frequire\0", "config", "nvim-tree.lua")
 time([[Config for nvim-tree.lua]], false)
 
 _G._packer.inside_compile = false

@@ -7,8 +7,9 @@ vim.keymap.set("v", "<leader>y", "\"+y")
 vim.keymap.set("n", "<leader>Y", "\"+Y")
 
 --Diagnostic Window
-vim.keymap.set('n', "<leader>e", "<cmd> lua vim.diagnostic.open_float() <CR>")
+vim.keymap.set('n', "<leader>d", "<cmd> lua vim.diagnostic.open_float() <CR>")
 
+vim.keymap.set('n', "<Leader><Leader>", "<C-^>", { desc = "vim 'Alternate File' binding" })
 
 --- Telescope ---
 local builtin = require('telescope.builtin')
@@ -53,3 +54,5 @@ vim.keymap.set('n', '<Leader>dt', dapui.toggle, { desc = 'DapUI toggle'} )
 
 --nvim-tree
 vim.keymap.set('n', '<Leader>e', ":NvimTreeToggle<CR>", { desc = "Nvim-Tree Explorer" })
+vim.keymap.set('n', "<1-LeftMouse>", require("nvim-tree.api").node.open.edit)
+

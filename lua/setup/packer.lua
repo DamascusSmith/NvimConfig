@@ -4,108 +4,108 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function(use)
-   -- Quality of Life
+  -- Quality of Life
 
-   -- Packer can manage itself
-   use 'wbthomason/packer.nvim'
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
 
-   use {
-      'nvim-telescope/telescope.nvim', tag = '0.1.8',
-      -- or                            , branch = '0.1.x',
-      requires = { {'nvim-lua/plenary.nvim'} }
-   }
+  use {
+    'nvim-telescope/telescope.nvim', tag = '0.1.8',
+    -- or                            , branch = '0.1.x',
+    requires = { {'nvim-lua/plenary.nvim'} }
+  }
 
-   -- Color Themes
-   vim.cmd("colorscheme habamax")
+  -- Color Themes
+  vim.cmd("colorscheme habamax")
 
-   use {
-      'nvim-treesitter/nvim-treesitter',
-      run = ':TSUpdate'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate'
 
-   }
-   use 'nvim-treesitter/playground'
-   use "nvim-lua/plenary.nvim" -- don't forget to add this 
-                              -- one if you don't have it yet!
-   use {
-      "ThePrimeagen/harpoon",
-      branch = "harpoon2",
-      requires = { {"nvim-lua/plenary.nvim"} }
-   }
-   use ('mbbill/undotree') --literally let's you do an undo tree
-   use ('tpope/vim-fugitive') -- greatest git interface for neovim
+  }
+  use 'nvim-treesitter/playground'
+  use "nvim-lua/plenary.nvim" -- don't forget to add this 
+  -- one if you don't have it yet!
+  use {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    requires = { {"nvim-lua/plenary.nvim"} }
+  }
+  use ('mbbill/undotree') --literally let's you do an undo tree
+  use ('tpope/vim-fugitive') -- greatest git interface for neovim
 
-   -- LSP Stuff
-   use { 'neovim/nvim-lspconfig' }
-   use { 'hrsh7th/nvim-cmp' }
-   use { 'hrsh7th/cmp-nvim-lsp' }
-   use { 'L3MON4D3/LuaSnip' }
-   use { 'saadparwaiz1/cmp_luasnip' }
-   use { 'williamboman/mason.nvim' }
-   use { 'williamboman/mason-lspconfig.nvim' }
+  -- LSP Stuff
+  use { 'neovim/nvim-lspconfig' }
+  use { 'hrsh7th/nvim-cmp' }
+  use { 'hrsh7th/cmp-nvim-lsp' }
+  use { 'L3MON4D3/LuaSnip' }
+  use { 'saadparwaiz1/cmp_luasnip' }
+  use { 'williamboman/mason.nvim' }
+  use { 'williamboman/mason-lspconfig.nvim' }
 
-   require('mason').setup({
-      opts = {
-         ensure_installed = {
-            "clangd",
-            "clang-format",
-         }
+  require('mason').setup({
+    opts = {
+      ensure_installed = {
+        "clangd",
+        "clang-format",
       }
-   })
-   require('mason-lspconfig').setup({
-      automatic_installation = true,
-      automatic_enable = true
-   })
-   require('luasnip.loaders.from_vscode').lazy_load()
-   
-   -- Code Snippets
-   local cmp = require('cmp')
-   cmp.setup({
-      snippet = {
-	    expand = function(args)
-	      require('luasnip').lsp_expand(args.body)
-	    end
-	  },
+    }
+  })
+  require('mason-lspconfig').setup({
+    automatic_installation = true,
+    automatic_enable = true
+  })
+  require('luasnip.loaders.from_vscode').lazy_load()
 
-	  mapping = { 
-	    ['<Tab>'] = cmp.mapping.select_next_item(),
-	    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
-	    ['<CR>'] = cmp.mapping.confirm({select = false}),
-	  },
+  -- Code Snippets
+  local cmp = require('cmp')
+  cmp.setup({
+    snippet = {
+      expand = function(args)
+        require('luasnip').lsp_expand(args.body)
+      end
+    },
 
-	  sources = {
-	    { name = 'nvim_lsp' },
-	    { name = 'luasnip' },
-	    { name = 'buffer' },
-	  }
-	})
+    mapping = { 
+      ['<Tab>'] = cmp.mapping.select_next_item(),
+      ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+      ['<CR>'] = cmp.mapping.confirm({select = false}),
+    },
 
-   -- Oil a file navigator
-   use("stevearc/oil.nvim")
+    sources = {
+      { name = 'nvim_lsp' },
+      { name = 'luasnip' },
+      { name = 'buffer' },
+    }
+  })
 
-   require'nvim-treesitter.configs'.setup {
-      ensure_installed = { "c", "cpp", "vim", "typescript", "javascript" },
+  -- Oil a file navigator
+  use("stevearc/oil.nvim")
 
-      auto_install = true,
+  require'nvim-treesitter.configs'.setup {
+    ensure_installed = { "c", "cpp", "vim", "typescript", "javascript" },
 
-      highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-      }
-   }
+    auto_install = true,
 
-   --Debugger
-   use "mfussenegger/nvim-dap"
-   use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}}
-   use { "thehamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" }}
+    highlight = {
+      enable = true,
+      additional_vim_regex_highlighting = false,
+    }
+  }
 
-   --Nvim-tree
-   use {
-     "nvim-tree/nvim-tree.lua",
-     requires = {
-       "nvim-tree/nvim-web-devicons",
-     },
-     config = function ()
-       require("nvim-tree").setup()
-     end
-   }
+  --Debugger
+  use "mfussenegger/nvim-dap"
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"}}
+  use { "thehamsta/nvim-dap-virtual-text", requires = { "mfussenegger/nvim-dap" }}
+
+  --Nvim-tree
+  use {
+    "nvim-tree/nvim-tree.lua",
+    requires = {
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("nvim-tree").setup()
+    end,
+  }
 end)
