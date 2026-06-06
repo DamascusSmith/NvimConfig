@@ -9,7 +9,7 @@ dap.adapters.codelldb = {
   port = "${port}",
   executable = {
     --Should make this a different variable 
-    command = vim.fn.expand("~/.local/share/codelldb/codelldb-1.12.2/extension/adapter/codelldb"),
+    command = vim.fn.expand("~/.local/share/nvim/mason/bin/codelldb"),
     args = { "--port", "${port}" },
   }
 }
