@@ -155,7 +155,7 @@ local function compile_cpp()
   }, { text = true }, function(result)
     vim.schedule(function()
       if result.code == 0 then
-        vim.notify("Build succeeded", vim.log.levels.INFO)
+        vim.notify("Build succeeded :)", vim.log.levels.INFO)
         return
       end
 
@@ -173,7 +173,7 @@ local function compile_cpp()
       vim.bo[buf].filetype = "log"
       vim.bo[buf].modifiable = false
 
-      vim.notify("Build failed", vim.log.levels.ERROR)
+      vim.notify("Build failed :(", vim.log.levels.ERROR)
     end)
   end)
 end
