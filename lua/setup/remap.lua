@@ -54,5 +54,19 @@ vim.keymap.set('n', '<Leader>dt', dapui.toggle, { desc = 'DapUI toggle'} )
 
 --nvim-tree
 vim.keymap.set('n', '<Leader>e', ":NvimTreeToggle<CR>", { desc = "Nvim-Tree Explorer" })
-vim.keymap.set('n', "<1-LeftMouse>", require("nvim-tree.api").node.open.edit)
 
+-- Save, and compile C++ files
+vim.keymap.set('n', '<Leader>C', function()
+  if vim.bo.filetype == 'cpp' then
+    vim.cmd("write")
+    local filepath = vim.fn.shellescape(vim.fn.expand('%:p'))
+    local binary = vim.fn.shellescape(vim.fn.expand('%:p:r'))
+    local standard = "-std=C++20 "
+    local warningFlags = "-Wall -Weffc++ -Wextra -Wconversion -Wsign-conversion "
+    local warningAsError = "-Werror "
+
+    vim.cmd("split | terminal g++ -g " .. standard .. filepath .. " -o " .. binary .. warningFlags .. warningAsError .. " -O0")
+  else
+    print(vim.fn.expand('%:h'), " is not a CPP file")
+  end
+end)
