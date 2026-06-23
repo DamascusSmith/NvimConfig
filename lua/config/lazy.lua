@@ -1,3 +1,4 @@
+-- Will find datapath and install lazy if not already installed
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -17,6 +18,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	end
 end
 
+-- Adds path to the beggining of the runtime path(rtp)
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
