@@ -1,3 +1,7 @@
+-- If in future we decide to use something not builtin we should make a plugin
+-- file for it
+vim.cmd.colorscheme("habamax")
+
 vim.opt.relativenumber = true
 
 -- Tab Rules
