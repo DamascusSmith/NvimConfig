@@ -17,6 +17,7 @@ return {
 		-- which filetypes it supports
 		-- how it detects the project root
 		-- other server-specific defaults
+			"hrsh7th/cmp-nvim-lsp",
 		},
 
 		opts = {
@@ -25,5 +26,20 @@ return {
 				"lua_ls",
 			},
 		},
+
+		config = function(_, opts)
+			local capabilities = 
+				require("cmp_nvim_lsp").default_capabilities()
+
+			vim.lsp.config("*", {
+				capabilities = capabilities,
+			})
+
+			require("mason-lspconfig").setup(opts)
+		end,
+	},
+
+	{
+		"neovim/nvim-lspconfig",
 	},
 }

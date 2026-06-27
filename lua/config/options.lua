@@ -2,6 +2,7 @@
 -- file for it
 vim.cmd.colorscheme("habamax")
 
+vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Tab Rules
